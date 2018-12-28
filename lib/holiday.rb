@@ -37,12 +37,8 @@ def add_supply_to_memorial_day(holiday_hash, supply)
 end
 
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
-  holiday_hash.each do |season|
-    season << holiday_name
-    holiday_name.each do |supply_array|
-      supply_array.push(supply)
-    end
-  end
+   holiday_hash[season] = {holiday_name => supply_array}
+   # remember to return the updated hash	   holiday_hash
   return holiday_hash
 end
 
